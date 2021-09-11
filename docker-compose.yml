@@ -24,7 +24,7 @@ services:
       - '13306:3306'
   front:
     build:
-      context: ./fornt
+      context: ./front
     volumes:
       - ./front:/app
     ports:
