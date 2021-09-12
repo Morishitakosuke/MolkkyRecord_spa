@@ -34,6 +34,9 @@ module App
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
 
+    # 日本語化
+    config.i18n.default_locale = :ja
+
     config.generators do |g|
       g.test_framework :rspec, 
             view_specs: false, 
