@@ -18,6 +18,7 @@
 <script>
 import loginForm from "../../components/login/LoginForm.vue";
 import SignUp from "../../components/login/SignUp.vue";
+
 export default {
   components: {
     loginForm,
@@ -39,19 +40,5 @@ export default {
       this.dialogLogin = true;
     },
   },
-  computed: {
-    // assetsImage() {
-    //   switch (this.$vuetify.breakpoint.name) {
-    //     case "xs":
-    //       return this.spImages;
-    //     case "sm":
-    //       return this.spImages;
-    //     default:
-    //       return this.pcImages;
-    //   }
-    // },
-  },
 };
 </script>
-<style scoped>
-</style>

@@ -1,50 +1,20 @@
 <template>
   <div id="app">
-    <v-app>
-      <header>
-        <v-app-bar app>
-          <v-toolbar-title>MolkkyRecord</v-toolbar-title>
-          <v-spacer></v-spacer>
-          <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
-        </v-app-bar>
-        <v-navigation-drawer v-model="drawer" app fixed temporary>
-          <v-list nav dense>
-            <v-list-item-group>
-              <v-list-item>
-                <v-list-item-title>お知らせ</v-list-item-title>
-              </v-list-item>
-              <v-list-item>
-                <v-list-item-title>※ユーザー</v-list-item-title>
-              </v-list-item>
-              <v-list-item>
-                <v-list-item-title>つぶやき</v-list-item-title>
-              </v-list-item>
-              <v-list-item>
-                <v-list-item-title>スコア投稿</v-list-item-title>
-              </v-list-item>
-              <v-list-item>
-                <v-list-item-title>ログアウト</v-list-item-title>
-              </v-list-item>
-            </v-list-item-group>
-          </v-list>
-        </v-navigation-drawer>
-      </header>
-      <div id="nav">
-        <router-link to="/">Home</router-link> |
-        <router-link to="/about">About</router-link>
-      </div>
-      <router-view/>
-    </v-app>
+    <LayoutHeader/>
+    <div id="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link>
+    </div>
+    <router-view/>
   </div>
 </template>
 
 <script>
+import LayoutHeader from "./components/layout/LayoutHeader.vue";
+
 export default {
-  data () {
-    return {
-      drawer: false
-    }
-  }
+  name: 'app',
+  components: { LayoutHeader }
 }
 </script>
 

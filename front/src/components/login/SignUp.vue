@@ -14,7 +14,7 @@
             </li>
           </ul>
         </div>
-        <v-text-field v-model="user.name" label="名前" prepend-icon="mdi-rename-box" dark required></v-text-field>
+        <v-text-field v-model="user.username" label="名前" prepend-icon="mdi-rename-box" dark required></v-text-field>
         <v-text-field
           v-model="user.email"
           label="メール"
@@ -55,11 +55,12 @@
 </template>
 <script>
 import axios from "axios";
+
 export default {
   data() {
     return {
       user: {
-        name: "",
+        username: "",
         email: "",
         password: "",
         password_confirmation: "",
@@ -75,7 +76,7 @@ export default {
   methods: {
     signUp() {
       axios
-        .post("/api/v1/auth", this.user)
+        .post("/v1/auth", this.user)
         .then((response) => {
           // レスポンスで返ってきた、認証に必要な情報をlocalStorageに保存
           localStorage.setItem(
