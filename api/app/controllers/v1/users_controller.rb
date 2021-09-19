@@ -1,6 +1,6 @@
 class V1::UsersController < ApplicationController
-  before_action :authenticate_api_user!, only: %i[update]
-  before_action :set_user, only: %i[updates]
+  # before_action :authenticate_api_user!, only: %i[update]
+  # before_action :set_user, only: %i[updates]
 
   def index
     render json: User.all.select(:id, :username, :profile, :image).limit(9).offset(params[:data_id])
